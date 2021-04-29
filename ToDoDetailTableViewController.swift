@@ -31,6 +31,9 @@ class ToDoDetailTableViewController: UITableViewController {
         updateSaveButtonState()
     }
     @IBAction func editingBegan(_ sender: Any) {
+        if titleTextField.text == "Remind me to..." {
+            titleTextField.text = ""
+        }
         titleTextField.textColor = .black
     }
     
@@ -117,6 +120,18 @@ class ToDoDetailTableViewController: UITableViewController {
         let dueDate     = dueDatePickerView.date
         let notes       = notesTextView.text
         
-        todo = ToDo(title: title, isComplete: isComplete, dueDate: dueDate, notes: notes)
+        // checking todo to nil.
+        // If it is, will be created new todo instance.
+        // If not, all properties will be replaced to new ones, though ID won't be changed to replace it's cell.
+        if todo == nil {
+            self.todo = ToDo(title: title, isComplete: isComplete, dueDate: dueDate, notes: notes)
+            return
+        } else {
+            todo?.title         = title
+            todo?.isComplete    = isComplete
+            todo?.dueDate       = dueDate
+            todo?.notes         = notes
+        }
+        
     }
 }

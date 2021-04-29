@@ -15,14 +15,48 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ToDoCell" id="PaH-dS-mb5">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ToDoCell" id="PaH-dS-mb5" customClass="ToDoCell" customModule="ToDoList" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="37.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PaH-dS-mb5" id="COs-rs-h3L">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="37.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mt0-OV-8Of">
+                                            <rect key="frame" x="15" y="5" width="28" height="27.5"/>
+                                            <state key="normal" image="circle" catalog="system">
+                                                <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="24" scale="default"/>
+                                            </state>
+                                            <state key="selected" image="checkmark.circle.fill" catalog="system">
+                                                <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="24" scale="default"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="completeButtonTapped:" destination="PaH-dS-mb5" eventType="touchUpInside" id="kfS-le-ehJ"/>
+                                                <action selector="isCompleteButtonTapped:" destination="lvC-2Q-fia" eventType="touchUpInside" id="yU4-hU-yfk"/>
+                                            </connections>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crg-CQ-sTb">
+                                            <rect key="frame" x="58" y="5" width="341" height="27.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="crg-CQ-sTb" secondAttribute="trailing" constant="15" id="3dp-c7-Sgh"/>
+                                        <constraint firstItem="mt0-OV-8Of" firstAttribute="leading" secondItem="COs-rs-h3L" secondAttribute="leading" constant="15" id="5qt-1f-gAQ"/>
+                                        <constraint firstAttribute="bottom" secondItem="mt0-OV-8Of" secondAttribute="bottom" constant="5" id="Dva-WI-sGI"/>
+                                        <constraint firstItem="crg-CQ-sTb" firstAttribute="leading" secondItem="mt0-OV-8Of" secondAttribute="trailing" constant="15" id="H1r-Pl-2U7"/>
+                                        <constraint firstItem="crg-CQ-sTb" firstAttribute="top" secondItem="COs-rs-h3L" secondAttribute="top" constant="5" id="eii-MI-PlO"/>
+                                        <constraint firstAttribute="bottom" secondItem="crg-CQ-sTb" secondAttribute="bottom" constant="5" id="j1i-yc-uy3"/>
+                                        <constraint firstItem="mt0-OV-8Of" firstAttribute="top" secondItem="COs-rs-h3L" secondAttribute="top" constant="5" id="zAc-Wj-ch3"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="isCompleteButton" destination="mt0-OV-8Of" id="9SQ-bL-mSd"/>
+                                    <outlet property="titleLabel" destination="crg-CQ-sTb" id="UnM-A7-u7R"/>
                                     <segue destination="eTu-JP-MtC" kind="presentation" id="hlf-TP-8yc"/>
                                 </connections>
                             </tableViewCell>
@@ -79,7 +113,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Remind me to..." borderStyle="roundedRect" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fiw-CO-nfu">
+                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Remind me to..." borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fiw-CO-nfu">
                                                     <rect key="frame" x="58" y="5" width="341" height="34"/>
                                                     <color key="textColor" systemColor="placeholderTextColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -90,7 +124,7 @@
                                                         <action selector="textEditingChanged:" destination="lvC-2Q-fia" eventType="editingChanged" id="U0g-V3-1hq"/>
                                                     </connections>
                                                 </textField>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7sI-ek-d5B">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7sI-ek-d5B">
                                                     <rect key="frame" x="15" y="5" width="28" height="34"/>
                                                     <state key="normal" image="circle" catalog="system">
                                                         <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

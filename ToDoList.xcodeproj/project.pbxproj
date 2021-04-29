@@ -15,6 +15,7 @@
 		D93D0D982638422D00615BA1 /* ToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93D0D972638422D00615BA1 /* ToDo.swift */; };
 		D93D0D9A2638439A00615BA1 /* ToDoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93D0D992638439A00615BA1 /* ToDoTableViewController.swift */; };
 		D93D0D9C26398BA400615BA1 /* ToDoDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93D0D9B26398BA400615BA1 /* ToDoDetailTableViewController.swift */; };
+		D93D0D9E263AA6B600615BA1 /* ToDoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93D0D9D263AA6B600615BA1 /* ToDoCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		D93D0D972638422D00615BA1 /* ToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo.swift; sourceTree = "<group>"; };
 		D93D0D992638439A00615BA1 /* ToDoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTableViewController.swift; sourceTree = "<group>"; };
 		D93D0D9B26398BA400615BA1 /* ToDoDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoDetailTableViewController.swift; sourceTree = SOURCE_ROOT; };
+		D93D0D9D263AA6B600615BA1 /* ToDoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 		D93D0D82263840F700615BA1 /* ToDoList */ = {
 			isa = PBXGroup;
 			children = (
+				D93D0D9D263AA6B600615BA1 /* ToDoCell.swift */,
 				D93D0D9B26398BA400615BA1 /* ToDoDetailTableViewController.swift */,
 				D93D0D83263840F700615BA1 /* AppDelegate.swift */,
 				D93D0D85263840F700615BA1 /* SceneDelegate.swift */,
@@ -145,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D93D0D982638422D00615BA1 /* ToDo.swift in Sources */,
+				D93D0D9E263AA6B600615BA1 /* ToDoCell.swift in Sources */,
 				D93D0D9C26398BA400615BA1 /* ToDoDetailTableViewController.swift in Sources */,
 				D93D0D9A2638439A00615BA1 /* ToDoTableViewController.swift in Sources */,
 				D93D0D84263840F700615BA1 /* AppDelegate.swift in Sources */,
